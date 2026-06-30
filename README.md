@@ -56,14 +56,14 @@ Usage of ./go-maven-resolver:
 You can install the latest version using `go install`:
 
 ```bash
-go install github.com/status-im/go-maven-resolver@latest
+go install github.com/phanirithvij/go-maven-resolver@latest
 ```
 When using `go install` with Go modules (Go 1.18+), the version is automatically detected and populated correctly from the Git tag (e.g., `v1.1.3`).
 
 If you are building from a local checkout, you can specify the version using `ldflags`:
 
 ```bash
-go build -ldflags="-X github.com/status-im/go-maven-resolver/internal/buildinfo.Version=1.2.3"
+go build -ldflags="-X github.com/phanirithvij/go-maven-resolver/internal/buildinfo.Version=1.2.3"
 ```
 
 # Details
@@ -82,6 +82,6 @@ The fetching is done by a pool of workers to avoid running out of sockets.
 I've decided to write this because I could not find a way to achieve the same thing using Gradle or Maven.
 Using commands like `mvn dependency:list` or `mvn help:effective-pom` is too slow and give hard to parse output. It also attempts to download all of the necessary JARs and POMs which is unnecessary.
 
-This is used to generate data for managing dependencies for a Gradle project via [Nix package manager](https://nixos.org/nix/) in our [status-mobile](https://github.com/status-im/status-mobile/tree/develop/nix/deps/gradle) repo.
+This is used to generate data for managing dependencies for a Gradle project via [Nix package manager](https://nixos.org/nix/) in our [status-mobile](https://github.com/phanirithvij/status-mobile/tree/develop/nix/deps/gradle) repo.
 
 For more details see [this Gradle Forum post](https://discuss.gradle.org/t/how-to-get-full-list-of-dependencies-and-their-meta/35825).

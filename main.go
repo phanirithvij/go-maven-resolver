@@ -8,10 +8,10 @@ import (
 	"os"
 	"strings"
 
-	"github.com/status-im/go-maven-resolver/fetcher"
-	"github.com/status-im/go-maven-resolver/finder"
-	"github.com/status-im/go-maven-resolver/internal/buildinfo"
-	"github.com/status-im/go-maven-resolver/pom"
+	"github.com/phanirithvij/go-maven-resolver/fetcher"
+	"github.com/phanirithvij/go-maven-resolver/finder"
+	"github.com/phanirithvij/go-maven-resolver/internal/buildinfo"
+	"github.com/phanirithvij/go-maven-resolver/pom"
 )
 
 var l *log.Logger

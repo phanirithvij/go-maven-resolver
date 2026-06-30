@@ -6,8 +6,8 @@ import (
 	"log"
 	"sync"
 
-	"github.com/status-im/go-maven-resolver/fetcher"
-	"github.com/status-im/go-maven-resolver/pom"
+	"github.com/phanirithvij/go-maven-resolver/fetcher"
+	"github.com/phanirithvij/go-maven-resolver/pom"
 )
 
 type Options struct {

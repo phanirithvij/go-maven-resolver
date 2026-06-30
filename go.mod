@@ -1,4 +1,4 @@
-module github.com/status-im/go-maven-resolver
+module github.com/phanirithvij/go-maven-resolver
 
 go 1.14
 

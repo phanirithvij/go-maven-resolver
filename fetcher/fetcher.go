@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/status-im/go-maven-resolver/internal/buildinfo"
+	"github.com/phanirithvij/go-maven-resolver/internal/buildinfo"
 )
 
 /* List of Maven repo URLs to try when searching for POMs */
@@ -79,7 +79,7 @@ func (p *Fetcher) retryFetch(url string) (io.ReadCloser, error) {
 		if err != nil {
 			return nil, err
 		}
-		req.Header.Add("User-Agent", "go-maven-resolver/"+buildinfo.Version+" (+https://github.com/status-im/go-maven-resolver)")
+		req.Header.Add("User-Agent", "go-maven-resolver/"+buildinfo.Version+" (+https://github.com/phanirithvij/go-maven-resolver)")
 
 		resp, err := client.Do(req)
 		if err != nil {
