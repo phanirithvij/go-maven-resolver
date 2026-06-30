@@ -15,6 +15,19 @@ The package name takes the Maven format: `<groupId>:<artifactId>:<version>`
 
 There's also a few flags available:
 ```
+This tool takes a names of a Java Maven packages
+via STDIN and returns the URLs of all its dependencies.
+
+echo commons-io:commons-io:2.4 | ./go-maven-resolver
+
+The default repos used for searching are:
+https://repo.maven.apache.org/maven2
+https://dl.google.com/dl/android/maven2
+https://plugins.gradle.org/m2
+https://jitpack.io
+
+You can provide your own list using the -reposFile flag.
+
 Usage of ./go-maven-resolver:
   -exitCode
     	Set exit code on any resolving failures. (default true)
@@ -22,6 +35,8 @@ Usage of ./go-maven-resolver:
     	Ignore optional dependencies. (default true)
   -ignoreScopes string
     	Scopes to ignore. (default "provided,system,test")
+  -ignoreTransitive
+    	Ignore transitive dependencies.
   -recursive
     	Should recursive resolution be done (default true)
   -reposFile string
@@ -30,8 +45,25 @@ Usage of ./go-maven-resolver:
     	HTTP request retries on non-404 codes. (default 2)
   -timeout int
     	HTTP request timeout in seconds. (default 2)
+  -version
+    	Print the version and exit.
   -workers int
     	Number of fetching workers. (default 50)
+```
+
+# Building and Installation
+
+You can install the latest version using `go install`:
+
+```bash
+go install github.com/status-im/go-maven-resolver@latest
+```
+When using `go install` with Go modules (Go 1.18+), the version is automatically detected and populated correctly from the Git tag (e.g., `v1.1.3`).
+
+If you are building from a local checkout, you can specify the version using `ldflags`:
+
+```bash
+go build -ldflags="-X github.com/status-im/go-maven-resolver/internal/buildinfo.Version=1.2.3"
 ```
 
 # Details
